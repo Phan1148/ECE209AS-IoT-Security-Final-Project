@@ -62,6 +62,7 @@ sklearn (for clustering algorithms)
 Example Output
 
 ==================================================
+
 Total Alerts: 220
 
 Detected Attack Types:
