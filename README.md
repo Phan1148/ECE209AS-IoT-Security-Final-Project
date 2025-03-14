@@ -1,5 +1,5 @@
-CacheLeaks - Cache Side-Channel Attack Detection Tool
-Overview
+#CacheLeaks - Cache Side-Channel Attack Detection Tool
+#Overview
 CacheLeaks is a sophisticated tool for detecting cache side-channel attacks, specifically designed to identify Flush+Reload and Prime+Probe attack patterns. The system monitors cache access timing patterns and uses statistical analysis to differentiate between normal system behavior and malicious side-channel activity.
 Files in this Repository
 
@@ -60,8 +60,7 @@ scipy (for enhanced statistical analysis)
 sklearn (for clustering algorithms)
 
 Example Output
-Copy==================================================
-Detection Report
+
 ==================================================
 Total Alerts: 220
 
@@ -81,6 +80,7 @@ Recent Alerts:
   - 16:05:09 | Flush+Reload | Confidence: 0.60
   - 16:05:09 | Flush+Reload | Confidence: 0.60
 ==================================================
+
 Implementation Details
 CacheLeaks uses a sliding window approach to analyze cache timing patterns. For Flush+Reload, it looks for bimodal distributions, while for Prime+Probe, it detects periodic patterns using autocorrelation analysis.
 The tool adapts to your system's specific timing characteristics through an automatic calibration phase that analyzes the provided datasets.
