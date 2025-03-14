@@ -27,14 +27,19 @@ Shows the probing phase to detect victim accesses
 Illustrates the periodic patterns in cache timing that occur during the attack
 Includes visualizations of cache set conflicts
 
-Running the Detection Tool
+# Running the Detection Tool
+
+## Run the generated data simulation
+python cacheleaks_mac_sim.py --csv-file mastik_sample_data.csv --verbose
+
+## Running Flush+Reload with Mastik integration
 Basic Usage
-bashCopy# Run the standard version
+bashCopy# Run with Flush+Reload data
 python cacheleaks.py --csv-file flush_reload.csv --verbose
 
-# Run the macOS simulation version
-python cacheleaks_mac_sim.py
-Command Line Arguments
+## Run Prime+Probe data with Mastik integration
+python cacheleaks.py --csv-file prime_probe.csv --verbose
+
 
 --csv-file: Path to CSV file with timing samples
 --window-size: Analysis window size (default: 50)
@@ -47,14 +52,14 @@ Based on our testing with the provided datasets:
 Flush+Reload detection: 73% accuracy
 Prime+Probe detection: 55% accuracy
 
-System Requirements
+## System Requirements
 Python Dependencies
 
 numpy
 matplotlib (for visualization if running the notebooks)
 pandas (for data processing)
 
-Optional Dependencies
+## Optional Dependencies
 
 scipy (for enhanced statistical analysis)
 sklearn (for clustering algorithms)
@@ -83,6 +88,6 @@ Recent Alerts:
 
 ==================================================
 
-Implementation Details
+## Implementation Details
 CacheLeaks uses a sliding window approach to analyze cache timing patterns. For Flush+Reload, it looks for bimodal distributions, while for Prime+Probe, it detects periodic patterns using autocorrelation analysis.
 The tool adapts to your system's specific timing characteristics through an automatic calibration phase that analyzes the provided datasets.
