@@ -88,7 +88,7 @@ Recent Alerts:
 
 # CacheLeaks Implementation Details
 ## Data Processing
-The system processes CSV timing data with 4-6 columns including timestamps, access times, cache hits, and attack type labels. It maintains a sliding window of recent cache accesses using memory-efficient data structures.
+The system processes CSV timing data with 6 columns including timestamps, access times, cache hits, and attack type labels. It maintains a sliding window of recent cache accesses using memory-efficient data structures.
 ## Detection Algorithms
 ### Flush+Reload Detection:
 This algorithm identifies bimodal distributions in cache access times. It creates histograms of timing data, finds peaks, and calculates valley-to-peak ratios. Lower ratios between timing clusters produce higher confidence scores, as deeper valleys between peaks are characteristic of Flush+Reload attacks.
