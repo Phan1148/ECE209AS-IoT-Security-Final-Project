@@ -33,8 +33,6 @@ Includes visualizations of cache set conflicts
 python cacheleaks_mac_sim.py --csv-file mastik_sample_data.csv --verbose
 
 ## Running Flush+Reload with Mastik integration
-Basic Usage
-bashCopy# Run with Flush+Reload data
 python cacheleaks.py --csv-file flush_reload.csv --verbose
 
 ## Run Prime+Probe data with Mastik integration
