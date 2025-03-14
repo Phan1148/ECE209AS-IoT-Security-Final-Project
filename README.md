@@ -32,8 +32,8 @@ Basic Usage
 bashCopy# Run the standard version
 python cacheleaks.py --csv-file flush_reload.csv --verbose
 
-# Run the macOS optimized version
-python cacheleaks_mac_sim.py --csv-file prime_probe.csv --verbose
+# Run the macOS simulation version
+python cacheleaks_mac_sim.py
 Command Line Arguments
 
 --csv-file: Path to CSV file with timing samples
@@ -80,6 +80,7 @@ Recent Alerts:
   - 16:05:09 | Flush+Reload | Confidence: 0.60
   - 16:05:09 | Flush+Reload | Confidence: 0.60
   - 16:05:09 | Flush+Reload | Confidence: 0.60
+
 ==================================================
 
 Implementation Details
