@@ -86,6 +86,26 @@ Recent Alerts:
 
 ==================================================
 
-## Implementation Details
-CacheLeaks uses a sliding window approach to analyze cache timing patterns. For Flush+Reload, it looks for bimodal distributions, while for Prime+Probe, it detects periodic patterns using autocorrelation analysis.
-The tool adapts to your system's specific timing characteristics through an automatic calibration phase that analyzes the provided datasets.
+# CacheLeaks Implementation Details
+## Data Processing
+The system processes CSV timing data with 4-6 columns including timestamps, access times, cache hits, and attack type labels. It maintains a sliding window of recent cache accesses using memory-efficient data structures.
+## Detection Algorithms
+### Flush+Reload Detection:
+This algorithm identifies bimodal distributions in cache access times. It creates histograms of timing data, finds peaks, and calculates valley-to-peak ratios. Lower ratios between timing clusters produce higher confidence scores, as deeper valleys between peaks are characteristic of Flush+Reload attacks.
+### Prime+Probe Detection:
+This detector focuses on periodicity in cache access patterns. It calculates differences between consecutive timing samples, identifies spikes above a dynamic threshold, and analyzes the regularity of intervals between spikes. More consistent intervals suggest coordinated Prime+Probe operations.
+## Calibration System
+The system auto-calibrates by analyzing provided data samples to determine optimal thresholds between cache hits and misses for the specific hardware. It extracts timing signatures for different attack types and adjusts classification weights based on observed characteristics.
+## Mastik Integration
+CacheLeaks integrates with Mastik data by extracting attack signatures from CSV outputs and using them as reference patterns for comparison with live measurements. This improves detection accuracy by matching against known attack patterns.
+
+## Technical Design Choices
+
+Fixed-size sliding windows maintain recent timing history without increasing memory usage
+Dynamically adjusted statistical thresholds adapt to different hardware characteristics
+Multiple detection signals are combined for greater accuracy and resilience against evasion
+Background thread processing enables continuous monitoring without blocking
+Weighted confidence scoring provides nuanced attack probability estimation
+
+## Performance Considerations
+The implementation prioritizes efficiency with optimized numerical processing, adaptive processing speeds based on dataset size, and memory-efficient data structures that maintain fixed-size analysis windows.
