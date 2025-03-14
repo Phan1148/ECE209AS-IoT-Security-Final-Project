@@ -30,7 +30,7 @@ Includes visualizations of cache set conflicts
 # Running the Detection Tool
 
 ## Run the generated data simulation
-python cacheleaks_mac_sim.py --csv-file mastik_sample_data.csv --verbose
+python cacheleaks_mac_sim.py
 
 ## Running Flush+Reload with Mastik integration
 python cacheleaks.py --csv-file flush_reload.csv --verbose
