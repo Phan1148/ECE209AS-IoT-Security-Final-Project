@@ -4,11 +4,17 @@ CacheLeaks is a tool for detecting cache side-channel attacks, specifically desi
 
 ## Files in this Repository
 cacheleaks.py: The main detection tool for identifying cache side-channel attacks
+
 cacheleaks_mac_sim.py: A macOS-optimized version with simulation capabilities
+
 flush_reload.csv: Sample data containing Flush+Reload attack patterns
+
 prime_probe.csv: Sample data containing Prime+Probe attack patterns
+
 Flush_Flush.ipynb: Jupyter notebook simulating Flush+Flush attack technique
+
 Prime_Probe.ipynb: Jupyter notebook simulating Prime+Probe attack techniques
+
 
 # Running the Detection Tool
 
