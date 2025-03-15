@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 CacheLeaks: Cache Side-Channel Detection Tool
 Enhanced for accuracy with improved classification algorithms
@@ -502,9 +501,6 @@ class CacheMonitor:
         
         # Generate report directly from here to ensure it's displayed
         self.generate_report()
-        
-        # Exit message
-        logger.info("Analysis complete. Program can now be terminated.")
     
     def generate_report(self):
         """Generate detection report with accuracy metrics matching the desired format"""
@@ -567,7 +563,6 @@ class CacheMonitor:
 
 
 def main():
-    """Main entry point with improved waiting"""
     parser = argparse.ArgumentParser(description='CacheLeaks: Cache Side-Channel Detection')
     parser.add_argument('--csv-file', type=str, help='Path to CSV data file with timing samples')
     parser.add_argument('--window-size', type=int, default=50, help='Analysis window size')
@@ -606,13 +601,6 @@ def main():
             monitor.stop_monitoring()
             # Generate report if it wasn't generated in the monitoring loop
             monitor.generate_report()
-            
-        # Indicate program can be terminated
-        logger.info("Press Ctrl+C to exit")
-        
-        # Keep program running so terminal/console remains open to view the report
-        while True:
-            time.sleep(1)
             
     except KeyboardInterrupt:
         logger.info("Interrupted by user")
