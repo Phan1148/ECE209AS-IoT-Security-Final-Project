@@ -94,6 +94,3 @@ Dynamically adjusted statistical thresholds adapt to different hardware characte
 Multiple detection signals are combined for greater accuracy and resilience against evasion
 Background thread processing enables continuous monitoring without blocking
 Weighted confidence scoring provides nuanced attack probability estimation
-
-## Performance Considerations
-The implementation prioritizes efficiency with optimized numerical processing, adaptive processing speeds based on dataset size, and memory-efficient data structures that maintain fixed-size analysis windows.
