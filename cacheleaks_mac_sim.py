@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-CacheLeaks: Cache Side-Channel Detection Tool (macOS Version)
+CacheLeaks: Cache Side-Channel Detection Tool
 
 This tool monitors system processes and memory access patterns to detect
 potential cache-based side-channel attacks such as Flush+Reload, Prime+Probe,
 and other timing attacks that exploit the shared cache architecture.
 
-Adapted for macOS with simulation-heavy approach due to hardware access restrictions.
+Adapted for macOS with simulation approach due to hardware access restrictions.
 """
 
 import os
