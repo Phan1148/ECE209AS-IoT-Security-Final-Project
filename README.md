@@ -79,7 +79,11 @@ CacheLeaks integrates with Mastik data by extracting attack signatures from CSV 
 ## Technical Design Choices
 
 Fixed-size sliding windows maintain recent timing history without increasing memory usage
+
 Dynamically adjusted statistical thresholds adapt to different hardware characteristics
+
 Multiple detection signals are combined for greater accuracy and resilience against evasion
+
 Background thread processing enables continuous monitoring without blocking
+
 Weighted confidence scoring provides nuanced attack probability estimation
