@@ -3,6 +3,8 @@ CacheLeaks: Cache Side-Channel Detection Tool
 
 This tool monitors simulate system processes and memory access patterns to detect
 potential cache-based side-channel attacks such as Flush+Reload, Prime+Probe.
+
+Run on macOS with limited hardware access.
 """
 
 import os
@@ -31,15 +33,6 @@ class CacheMonitor:
     """Monitors cache access patterns for potential side-channel leakage."""
     
     def __init__(self, pid=None, threshold=100, window_size=1000, sampling_rate=1000):
-        """
-        Initialize the cache monitor.
-        
-        Args:
-            pid: Process ID to monitor (None for system-wide monitoring)
-            threshold: Threshold for detecting anomalous cache behavior (in cycles)
-            window_size: Size of the sliding window for statistical analysis
-            sampling_rate: Cache access sampling rate in Hz
-        """
         self.pid = pid
         self.threshold = threshold
         self.window_size = window_size
@@ -431,9 +424,7 @@ class CacheLeaks:
     def _scan_process(self, pid):
         """
         Scan a specific process for cache side-channel vulnerabilities.
-        
-        Args:
-            pid: Process ID to scan
+
         """
         if not pid:
             logger.error("No PID specified for process scanning")
@@ -458,9 +449,6 @@ class CacheLeaks:
     def _scan_system(self, duration=60):
         """
         Scan the entire system for cache side-channel vulnerabilities.
-        
-        Args:
-            duration: Duration of the scan in seconds
         """
         logger.info(f"Scanning system for cache side-channel vulnerabilities (duration: {duration}s)...")
         
@@ -483,9 +471,7 @@ class CacheLeaks:
     def _scan_binary(self, binary_path):
         """
         Scan a binary file for potential cache side-channel vulnerabilities.
-        
-        Args:
-            binary_path: Path to the binary file
+
         """
         if not os.path.exists(binary_path):
             logger.error(f"Binary file {binary_path} does not exist")
@@ -515,9 +501,7 @@ class CacheLeaks:
     def run(self, args):
         """
         Run the CacheLeaks tool with the specified arguments.
-        
-        Args:
-            args: Command-line arguments
+
         """
         supported, warnings = self._check_system_support()
         
