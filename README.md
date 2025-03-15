@@ -50,18 +50,6 @@ Based on our testing with the provided datasets:
 Flush+Reload detection: 73% accuracy
 Prime+Probe detection: 55% accuracy
 
-## System Requirements
-Python Dependencies
-
-numpy
-matplotlib (for visualization if running the notebooks)
-pandas (for data processing)
-
-## Optional Dependencies
-
-scipy (for enhanced statistical analysis)
-sklearn (for clustering algorithms)
-
 Example Output
 
 ==================================================
