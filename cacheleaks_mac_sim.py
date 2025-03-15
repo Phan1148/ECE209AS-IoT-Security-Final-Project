@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 CacheLeaks: Cache Side-Channel Detection Tool
 
